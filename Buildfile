@@ -1,1 +1,1 @@
-build: gradle bootJar
+build: ./gradlew bootJar

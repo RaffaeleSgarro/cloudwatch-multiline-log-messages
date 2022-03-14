@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
@@ -14,7 +16,10 @@ import java.nio.charset.StandardCharsets;
 @SpringBootApplication
 public class DemoApplication {
 
+    private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
+
     public static void main(String[] args) {
+        log.info("This log line is required because Cloudwatch agent uses it to fingerprint and detect log rotations. Do not remove");
         SpringApplication.run(DemoApplication.class, args);
     }
 

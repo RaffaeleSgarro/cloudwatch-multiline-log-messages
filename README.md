@@ -71,7 +71,7 @@ But the online CloudWatch error browser makes each line an error event.
 
 - Checkout the source code
 - Create new application with `eb init --profile=...YOUR CREDENTIALS...`
-- Create new environment with `eb create`
+- Create new environment with `eb create` (select a Java profile >= 11)
 - Deploy the code with `eb deploy`
 - Point an HTTP client to the environment just created
 - Check the logs in AWS console

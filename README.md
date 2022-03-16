@@ -82,3 +82,19 @@ A single line in the log console that can be zoomed into to view the full stack 
 **What is the actual behavior?**<br/>
 Each line in the stack trace is an error message on its own. One can't copy/paste the error,
 and it wastes a lot of vertical space because Spring stack frames are very deep.
+
+
+## How to fix
+
+- Log JVM output to a file. With SpringBoot and Logback is a single line in the `application.properties`
+- Add a Beanstalk postdeploy hook to configure CloudWatch to read this file with a `multi_line_start_pattern`
+
+**IMPORTANT** the postdeploy hook must be executable. Ensure it with:
+
+    git update-index --chmod=+x .platform/hooks/predeploy/01_cloudwatch.sh
+
+
+## Suggested configuration of AWS online log browser
+
+- Riquadro estraibile
+- NO righe a capo

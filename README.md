@@ -87,9 +87,9 @@ and it wastes a lot of vertical space because Spring stack frames are very deep.
 ## How to fix
 
 - Log JVM output to a file. With SpringBoot and Logback is a single line in the `application.properties`
-- Add a Beanstalk postdeploy hook to configure CloudWatch to read this file with a `multi_line_start_pattern`
+- Add a Beanstalk predeploy hook to configure CloudWatch to read this file with a `multi_line_start_pattern`
 
-**IMPORTANT** the postdeploy hook must be executable. Ensure it with:
+**IMPORTANT** the predeploy hook must be executable. Ensure it with:
 
     git update-index --chmod=+x .platform/hooks/predeploy/01_cloudwatch.sh
 
